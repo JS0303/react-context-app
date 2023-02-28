@@ -22,7 +22,7 @@ const Type = ({ orderType }) => {
       setError(true);
     }
   };
-  const ItemComponent = orderType === "product" ? Products : Options;
+  const ItemComponent = orderType === "products" ? Products : Options;
   const optionItems = items.map((item) => (
     <ItemComponent
       key={item.name}

@@ -1,14 +1,16 @@
 import "./App.css";
-import CompletePage from "./pages/CompletePage";
-import OrderPage from "./pages/Orderpage";
+import { useState } from "react";
 import SummaryPage from "./pages/SummaryPage";
+import OrderPage from "./pages/Orderpage";
+import CompletePage from "./pages/CompletePage";
 
 function App() {
+  const [step, setStep] = useState(0);
   return (
     <div style={{ padding: "4rem" }}>
-      <OrderPage />
-      <SummaryPage />
-      <CompletePage />
+      {step === 0 && <OrderPage setStep={setStep} />}
+      {step === 1 && <SummaryPage setStep={setStep} />}
+      {step === 2 && <CompletePage setStep={setStep} />}
     </div>
   );
 }
